@@ -1,0 +1,118 @@
+.club-grid{
+    padding: 10px;
+    background-color: #fff;
+    height: 100%;
+}
+
+.club-grid .club-grid-header ul {
+    margin: 0;
+}
+
+.club-grid .club-grid-header{
+    margin: 5px 0 10px;
+    background: transparent;
+    border: none;
+    height: auto;
+}
+
+.club-grid .club-grid-header .left {
+    float: left;
+    position: relative;
+}
+
+.club-grid .club-grid-header .right {
+    float: right;
+    position: relative;
+}
+
+.club-btn{
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 2px;
+    min-width: 100px;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.club-btn i{
+    margin-right: 5px;
+}
+
+.club-btn.is-small{
+    height: 24px;
+    font-size: 12px;
+}
+
+.club-btn.is-info:hover{
+    /*background-color: #0061CB;*/
+    border-color: transparent;
+    color: #fff;
+}
+
+.club-btn.is-info{
+    background-color: #4088c7;
+    border-color: transparent;
+    color: #fff;
+}
+
+input, select{
+    height: 24px;
+}
+
+input, textarea, select{
+    border-radius: 2px;
+    display: block;
+    background-color: white;
+    border: 1px solid #D4D4D4;
+    line-height: 1.5;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+}
+
+input.is-long{
+    width: 400px;
+}
+
+.select:after {
+    border: 1px solid #00d1b2;
+    border-right: 0;
+    border-top: 0;
+    content: " ";
+    display: block;
+    height: 0.5em;
+    pointer-events: none;
+    position: absolute;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    width: 0.5em;
+    margin-top: -0.375em;
+    right: 0.75em;
+    top: 50%;
+    z-index: 4;
+}
+
+.select select{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    padding-right: 1.25em;
+}
+
+.club-search{
+    position: relative;
+}
+
+.club-search .search-icon{
+    cursor: pointer;
+    display: inline-block;
+    height: 12px;
+    position: absolute;
+    right: 8px;
+    top: 5px;
+    width: 12px;
+    color: #4088c7;
+}
+
+.club-grid .club-grid-container{
+    height: calc(100% - 39px);
+}
