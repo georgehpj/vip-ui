@@ -1,53 +1,13 @@
 {
-  "name": "vip-data-club",
-  "version": "3.2.1",
-  "description": "唯品数坊",
+  "name": "club",
+  "version": "0.0.0",
+  "description": "club",
   "homepage": "index.html",
-  "repository": {
-    "type": "git",
-    "url": " git@gitlab.tools.vipshop.com:bigdata-tools/vip-data-club.git"
-  },
-  "author": {
-    "wiki": "http://wiki.corp.vipshop.com/pages/viewpage.action?pageId=124956318"
-  },
-  "license": "ISC",
   "devDependencies": {
-    "crypto": "^0.0.3",
-    "e": "^0.0.4",
     "gulp": "^3.9.1",
-    "gulp-clean": "^0.3.2",
-    "gulp-concat": "^2.6.0",
-    "gulp-html-replace": "^1.6.1",
-    "gulp-less": "^3.1.0",
-    "gulp-minify-css": "^1.2.4",
-    "gulp-rename": "^1.2.2",
-    "gulp-rev": "^7.1.2",
-    "gulp-rev-collector": "^1.0.5",
-    "gulp-rev-css-url": "^0.1.0",
-    "gulp-rev-hash": "^0.0.2",
     "gulp-sass": "^3.1.0",
-    "gulp-sequence": "^0.4.6",
-    "gulp-sourcemaps": "^1.9.1",
-    "gulp-uglify": "^2.0.0",
-    "gulp-useref": "^3.1.2",
     "gulp-watch": "^4.3.11",
-    "gulp-webserver": "^0.9.1",
-    "jasmine-core": "^2.5.2",
-    "karma": "^1.3.0",
-    "karma-chrome-launcher": "^2.0.0",
-    "karma-coverage": "^1.1.1",
-    "karma-firefox-launcher": "^1.0.0",
-    "karma-jasmine": "^1.0.2",
-    "karma-junit-reporter": "^1.2.0",
-    "karma-phantomjs-launcher": "^1.0.2",
-    "karma-requirejs": "^1.1.0",
-    "phantomjs-prebuilt": "^2.1.14",
-    "q": "^1.4.1",
-    "requirejs": "^2.3.2",
-    "text": "requirejs/text",
-    "through2": "^2.0.1"
+    "gulp-webserver": "^0.9.1"
   },
-  "scripts": {
-    "buildprd": "gulp build_prd_with_karma"
-  }
+  "scripts": {}
 }
