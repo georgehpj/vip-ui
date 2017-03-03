@@ -1,0 +1,60 @@
+@charset "utf-8";
+$grid-columns: 12 !default;
+@mixin float-grid-columns($i: 1, $list: ".vip-col-#{$i}") {
+  @for $i from (1 + 1) through $grid-columns {
+    $list: "#{$list}, .vip-col-#{$i}";
+  }
+  #{$list} {
+    float: left;
+    position: relative;
+  }
+}
+
+@mixin calc-grid-column($index, $type) {
+  @if ($type == width) and ($index > 0) {
+    .vip-col-#{$index} {
+      width: percentage(($index / $grid-columns));
+    }
+  }
+  @if ($type == push) and ($index > 0) {
+    .vip-push-#{$index} {
+      left: percentage(($index / $grid-columns));
+    }
+  }
+  @if ($type == push) and ($index == 0) {
+    .vip-push-0 {
+      left: auto;
+    }
+  }
+  @if ($type == pull) and ($index > 0) {
+    .vip-pull-#{$index} {
+      right: percentage(($index / $grid-columns));
+    }
+  }
+  @if ($type == pull) and ($index == 0) {
+    .vip-pull-0 {
+      right: auto;
+    }
+  }
+  @if ($type == offset) {
+    .vip-offset-#{$index} {
+      margin-left: percentage(($index / $grid-columns));
+    }
+  }
+}
+
+@mixin loop-grid-columns($columns, $type) {
+  @for $i from 0 through $columns {
+    @include calc-grid-column($i, $type);
+  }
+}
+
+@mixin make-grid() {
+  @include float-grid-columns();
+  @include loop-grid-columns($grid-columns, width);
+  @include loop-grid-columns($grid-columns, pull);
+  @include loop-grid-columns($grid-columns, push);
+  @include loop-grid-columns($grid-columns, offset);
+}
+
+@include make-grid;

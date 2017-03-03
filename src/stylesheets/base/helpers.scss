@@ -1,0 +1,48 @@
+// Float
+.vip-clear {
+  @include clearfix;
+}
+
+.vip-left {
+  float: left;
+}
+
+.vip-right {
+  float: right;
+}
+
+// Overlay
+.vip-overlay {
+  @include overlay;
+}
+
+// Text
+.vip-text-center {
+  text-align: center;
+}
+
+.vip-text-left {
+  text-align: left;
+}
+
+.vip-text-right {
+  text-align: right;
+}
+
+// Visibility
+.vip-hidden {
+  display: none !important;
+}
+
+// Other
+.vip-no-margin {
+  margin: 0 !important;
+}
+
+.vip-no-padding {
+  padding: 0 !important;
+}
+
+.vip-unselectable {
+  @include unselectable;
+}

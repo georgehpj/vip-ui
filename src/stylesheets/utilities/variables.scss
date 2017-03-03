@@ -1,0 +1,95 @@
+@charset "utf-8";
+////////////////////////////////////////////////
+// 1. Initial variables
+
+// Colors
+$black: #000 !default;
+$black-bis: #121212 !default;
+$black-ter: #242424 !default;
+
+$white: #FFF !default;
+$white-bis: #FAFAFA !default;
+$white-ter: #F4F8FB !default;
+
+$grey-darker: #363636 !default;
+$grey-dark: #4A4A4A !default;
+$grey: #7A7A7A !default;
+$grey-light: #B5B5B5 !default;
+$grey-lighter: #DBDBDB !default;
+
+$blue: #637aff !default;
+$blue-dark: #0061CB !default;
+$green: #129013 !default;
+$orange: #EC5C40 !default;
+$red: #FF3860 !default;
+$yellow: #FFDD57 !default;
+$turquoise: #00D1B2 !default;
+$purple: #B86BFF !default;
+
+// Typography
+$family-sans-serif: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif !default;
+$family-monospace: "Inconsolata", "Consolas", "Monaco", monospace !default;
+
+$size-base: 20px !default;
+
+$font-size-base: 14px !default;
+$font-size-small: 12px !default;
+$font-size-medium: 18px !default;
+$font-size-large: 24px !default;
+
+$weight-light: 300 !default;
+$weight-normal: 400 !default;
+$weight-bold: 700 !default;
+
+// Miscellaneous
+$easing: ease-out !default;
+$radius-small: 2px !default;
+$radius: 3px !default;
+$radius-large: 5px !default;
+$speed: 86ms !default;
+
+////////////////////////////////////////////////
+// 2. Primary colors
+$info: $blue !default;
+$success: $green !default;
+$warning: $yellow !default;
+$danger: $red !default;
+
+////////////////////////////////////////////////
+// 3. Applied variables
+
+// General colors
+$background-color: $white-ter !default;
+$border-color: $grey-lighter !default;
+$border-hover-color: $grey-light !default;
+
+// Text colors
+$text-color: $grey-dark !default;
+$text-light-color: $grey !default;
+$text-strong-color: $grey-darker !default;
+
+// Code colors
+$code-color: $red !default;
+$code-background-color: $background-color !default;
+
+$pre: $text-color !default;
+$pre-background-color: $background-color !default;
+
+// Link colors
+$link: $blue !default;
+$link-visited: $blue !default;
+$link-hover: $blue-dark !default;
+$link-hover-border: $blue-dark !default;
+$link-focus: $blue-dark !default;
+$link-focus-border: $blue-dark !default;
+$link-active: $blue-dark !default;
+$link-active-border: $blue-dark !default;
+
+// Typography
+$family-primary: $family-sans-serif !default;
+$family-code: $family-monospace !default;
+
+////////////////////////////////////////////////
+
+//4. screen size
+$wide-screen: 1280px !default;

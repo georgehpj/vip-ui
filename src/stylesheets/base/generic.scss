@@ -1,0 +1,126 @@
+$body-background: $white !default;
+$body-size: $size-base !default;
+
+html {
+  background-color: $body-background;
+  font-size: $body-size;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  min-width: 1200px;
+  overflow-x: auto;
+  overflow-y: auto;
+  text-rendering: optimizeLegibility;
+}
+
+article,
+aside,
+figure,
+footer,
+header,
+section {
+  display: block;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: $family-primary;
+}
+
+code,
+pre {
+  font-family: $family-code;
+}
+
+body {
+  color: $text-color;
+  font-size: $font-size-base;
+  font-weight: $weight-normal;
+  line-height: 1.5;
+}
+
+// Inline
+
+a {
+  color: $link;
+  cursor: pointer;
+  text-decoration: none;
+  transition: none $speed $easing;
+  &:hover {
+    color: $link-hover;
+  }
+}
+
+code {
+  background-color: $code-background-color;
+  color: $code-color;
+  font-size: 0.8em;
+  font-weight: normal;
+  padding: 0.25em 0.5em 0.25em;
+}
+
+hr {
+  background-color: $border-color;
+  border: none;
+  display: block;
+  height: 1px;
+  margin: 0.75rem 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  vertical-align: baseline;
+}
+
+small {
+  font-size: 0.8em;
+}
+
+span {
+  font-style: inherit;
+  font-weight: inherit;
+}
+
+strong {
+  color: $text-strong-color;
+  font-weight: $weight-bold;
+}
+
+// Block
+
+pre {
+  background-color: $pre-background-color;
+  color: $pre;
+  font-size: 0.8em;
+  white-space: pre;
+  word-wrap: normal;
+
+  code {
+    background: none;
+    color: inherit;
+    display: block;
+    font-size: 1em;
+    overflow-x: auto;
+    padding: 0.625rem 0.75rem;
+  }
+}
+
+table {
+  width: 100%;
+  font-size: $font-size-small;
+  td,
+  th {
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th {
+    color: $text-strong-color;
+  }
+}

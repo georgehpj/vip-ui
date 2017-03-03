@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+$btn-bg-color: $link;
+$btn-bg-color-hover: $link-hover;
+$btn-bg-color-disabled: $grey-lighter;
+$btn-bg-color-gray: $grey-light;
+$btn-bg-color-gray-hover: $grey;
+
+$btn-color: $white;
+$btn-min-width: 5rem;
+
+@mixin btn-icon{
+  .vip-icon{
+    margin-right: 0.25rem;
+  }
+}
+
+.vip-btn {
+  @include control;
+  @include unselectable;
+  @include btn-icon;
+
+  background-color: $btn-bg-color;
+  color: $btn-color;
+  cursor: pointer;
+  height: 1.7rem;
+  line-height: 1.7rem;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  text-align: center;
+  white-space: nowrap;
+
+  strong {
+    color: inherit;
+  }
+
+  // States
+  &:hover,
+  &.is-hovered {
+    background-color: $btn-bg-color-hover;
+    color: $btn-color;
+  }
+
+  // Sizes
+  &.small {
+    height: 1.2rem;
+    line-height: 1.2rem;
+    font-size: $font-size-small;
+  }
+
+  &.long {
+    min-width: $btn-min-width;
+  }
+
+  // Modifiers
+  &[disabled],
+  &.disabled {
+
+    background-color: $btn-bg-color-disabled;
+    color: $btn-color;
+    &:hover{
+      background-color: $btn-bg-color-disabled;
+    }
+  }
+
+  &.btn-gray{
+    background-color: $btn-bg-color-gray;
+    color: $btn-color;
+    &:hover{
+      background-color: $btn-bg-color-gray-hover;
+    }
+  }
+}

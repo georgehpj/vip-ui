@@ -1,0 +1,109 @@
+@charset "utf-8";
+@mixin clearfix {
+  &:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+//绝对定位居中布局
+@mixin center($size) {
+  left: 50%;
+  margin-left: -($size / 2);
+  margin-top: -($size / 2);
+  position: absolute;
+  top: 50%;
+}
+
+//绝对定位居中布局，默认撑满容器
+@mixin overlay($offset: 0) {
+  position: absolute;
+  bottom: $offset;
+  left: $offset;
+  right: $offset;
+  top: $offset;
+}
+
+@mixin unselectable() {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+//关闭按钮
+@mixin close {
+  @include unselectable();
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  display: inline-block;
+  height: 0.7rem;
+  width: 0.7rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  position: relative;
+  transform: rotate(45deg);
+  transform-origin: center center;
+  vertical-align: top;
+  border-radius: 50%;
+  &:before,
+  &:after {
+    background-color: rgba($white, 0.8);
+    content: "";
+    display: block;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  &:before {
+    height: 2px;
+    width: 100%;
+  }
+  &:after {
+    height: 100%;
+    width: 2px;
+  }
+  &:hover,
+  &:focus {
+    &:before,
+    &:after{
+      background-color: $white;
+    }
+  }
+  &.large {
+    height: 1rem;
+    width: 1rem;
+  }
+}
+
+@mixin loader {
+  animation: spinAround 500ms infinite linear;
+  border: 2px solid $border-color;
+  border-radius: 50%;
+  border-top-color: transparent;
+  content: "";
+  display: block;
+  height: 0.5rem;
+  position: relative;
+  width: 0.5rem;
+}
+
+@mixin placeholder {
+  $placeholders: ":-moz" ":-webkit-input" "-moz" "-ms-input";
+  @each $placeholder in $placeholders {
+    &:#{$placeholder}-placeholder {
+      @content;
+    }
+  }
+}
+
+@mixin wide-screen {
+  @media screen and (min-width: $wide-screen) {
+    @content;
+  }
+}
