@@ -1,16 +1,18 @@
 @charset "utf-8";
 
 $btn-bg-color: $link;
-$btn-bg-color-hover: $link-hover;
+$btn-bg-color-hover: darken($link, 8%);
+$btn-bg-color-active: darken($btn-bg-color-hover, 5%);
 $btn-bg-color-disabled: $grey-lighter;
 $btn-bg-color-gray: $grey-light;
-$btn-bg-color-gray-hover: $grey;
+$btn-bg-color-gray-hover: darken($grey-light, 8%);
+$btn-bg-color-gray-disabled: darken($btn-bg-color-gray-hover, 5%);
 
 $btn-color: $white;
 $btn-min-width: 5rem;
 
-@mixin btn-icon{
-  .vip-icon{
+@mixin btn-icon {
+  .vip-icon {
     margin-right: 0.25rem;
   }
 }
@@ -36,16 +38,27 @@ $btn-min-width: 5rem;
 
   // States
   &:hover,
-  &.is-hovered {
+  &.hovered {
     background-color: $btn-bg-color-hover;
     color: $btn-color;
   }
 
+  &:active,
+  &.active {
+    background-color: $btn-bg-color-active;
+  }
+
   // Sizes
   &.small {
-    height: 1.2rem;
-    line-height: 1.2rem;
-    font-size: $font-size-small;
+    @include control-small;
+  }
+
+  &.medium{
+    @include control-medium;
+  }
+
+  &.large {
+    @include control-large;
   }
 
   &.long {
@@ -55,19 +68,24 @@ $btn-min-width: 5rem;
   // Modifiers
   &[disabled],
   &.disabled {
-
     background-color: $btn-bg-color-disabled;
     color: $btn-color;
-    &:hover{
+    &:hover,
+    &.hovered {
       background-color: $btn-bg-color-disabled;
     }
   }
 
-  &.btn-gray{
+  &.btn-gray {
     background-color: $btn-bg-color-gray;
     color: $btn-color;
-    &:hover{
+    &:hover,
+    &.hovered{
       background-color: $btn-bg-color-gray-hover;
+    }
+    &:active,
+    &.active{
+      background-color: $btn-bg-color-gray-disabled;
     }
   }
 }

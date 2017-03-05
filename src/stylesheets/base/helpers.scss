@@ -46,3 +46,9 @@
 .vip-unselectable {
   @include unselectable;
 }
+
+@each $name, $color in $colors {
+  .vip-font-#{$name} {
+    color: $color;
+  }
+}

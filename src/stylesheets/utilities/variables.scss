@@ -65,7 +65,7 @@ $border-hover-color: $grey-light !default;
 
 // Text colors
 $text-color: $grey-dark !default;
-$text-light-color: $grey !default;
+$text-light-color: $grey-light !default;
 $text-strong-color: $grey-darker !default;
 
 // Code colors
@@ -93,3 +93,6 @@ $family-code: $family-monospace !default;
 
 //4. screen size
 $wide-screen: 1280px !default;
+
+$colors: (white: $white, black: $black, light: $grey-lighter, dark: $grey-darker, primary: $white, info: $info, success: $success, warning: $warning, danger: $danger) !default;
+

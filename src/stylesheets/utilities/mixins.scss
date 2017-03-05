@@ -1,4 +1,17 @@
 @charset "utf-8";
+@mixin arrow($color) {
+  border: 2px solid $color;
+  border-right: 0;
+  border-top: 0;
+  content: " ";
+  display: block;
+  height: 0.5em;
+  pointer-events: none;
+  position: absolute;
+  transform: rotate(-45deg);
+  width: 0.5em;
+}
+
 @mixin clearfix {
   &:after {
     clear: both;
@@ -78,6 +91,15 @@
   &.large {
     height: 1rem;
     width: 1rem;
+  }
+}
+
+@keyframes spinAround {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
   }
 }
 
