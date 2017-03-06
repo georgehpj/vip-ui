@@ -1,92 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="../vip-ui.css">
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="../vip-ui.css">
+  <style>
+    .demo-section {
+      margin: 15px;
+      padding: 15px;
+      border: 1px solid #ddd;
+    }
+    .demo-left-aside{
+      border-right: 1px solid #ddd;
+      padding-right: 10px;
+    }
+  </style>
 </head>
 <body>
-<form class="vip-form">
+<section class="demo-section">
+  <form class="vip-form">
     <div class="vip-row">
-        <div class="vip-col-3">
-            <label class="label" for="name">
-                <strong class="vip-font-danger">*</strong>
-                Name
+      <div class="vip-col-3">
+        <label class="label" for="name">
+          <strong class="vip-font-danger">*</strong>
+          Name
+        </label>
+        <div class="vip-form-control">
+          <input class="input" type="text" id="name">
+        </div>
+      </div>
+      <div class="vip-col-3">
+        <label class="label" for="age">Age</label>
+        <div class="vip-form-control">
+          <input class="input" type="text" id="age">
+        </div>
+      </div>
+      <div class="vip-col-6">
+        <label class="label" for="job">Job</label>
+        <div class="vip-form-control">
+          <input class="input" type="text" id="job">
+        </div>
+      </div>
+    </div>
+    <div class="vip-row">
+      <div class="vip-col-12">
+        <label for="desc" class="label">Description</label>
+        <p class="vip-form-control">
+          <textarea name="desc" id="desc"></textarea>
+        </p>
+      </div>
+    </div>
+    <div class="vip-row">
+      <div class="vip-col-4">
+        <label class="label">Sex</label>
+        <div class="vip-form-control">
+          <label class="vip-radio">
+            <input type="radio" name="sex">
+            <span>Male</span>
+          </label>
+          <label class="vip-radio">
+            <input type="radio" name="sex">
+            <span>Female</span>
+          </label>
+        </div>
+      </div>
+      <div class="vip-col-6 vip-offset-2">
+        <label class="label">Technology</label>
+        <p class="vip-form-control">
+          <label class="vip-checkbox">
+            <input type="checkbox" name="technology">
+            <span>php</span>
+          </label>
+          <label class="vip-checkbox">
+            <input type="checkbox" name="technology">
+            <span>javascript</span>
+          </label>
+          <label class="vip-checkbox disabled">
+            <input type="checkbox" name="technology" disabled>
+            <span>ruby</span>
+          </label>
+          <label class="vip-checkbox disabled">
+            <input type="checkbox" name="technology" checked disabled>
+            <span>java</span>
+          </label>
+        </p>
+      </div>
+    </div>
+    <div class="vip-row">
+      <div class="vip-col-4">
+        <label for="city" class="label">City</label>
+        <div class="vip-form-control">
+          <div class="vip-select">
+            <select name="city" id="city">
+              <option value="1">Shanghai</option>
+              <option value="2">Beijing</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</section>
+
+<section class="demo-section">
+  <div class="vip-row">
+    <div class="vip-col-3 demo-left-aside">
+      <form class="vip-form full-size">
+        <div class="vip-row">
+          <div class="vip-col-12">
+            <label class="label short" for="name2" title="Name Name">
+              <strong class="vip-font-danger">*</strong>
+              Name
+              Name
             </label>
             <div class="vip-form-control">
-                <input class="input" type="text" id="name">
+              <input class="input" type="text" id="name2">
             </div>
+          </div>
         </div>
-        <div class="vip-col-3">
-            <label class="label" for="age">Age</label>
+        <div class="vip-row">
+          <div class="vip-col-12">
+            <label for="city2" class="label short">City</label>
             <div class="vip-form-control">
-                <input class="input" type="text" id="age">
+              <div class="vip-select">
+                <select name="city" id="city2">
+                  <option value="1">Shanghai</option>
+                  <option value="2">Beijing</option>
+                </select>
+              </div>
             </div>
+          </div>
         </div>
-        <div class="vip-col-6">
-            <label class="label" for="job">Job</label>
+        <div class="vip-row">
+          <div class="vip-col-12">
+            <label class="label short">Sex</label>
             <div class="vip-form-control">
-                <input class="input" type="text" id="job">
+              <label class="vip-radio">
+                <input type="radio" name="sex">
+                <span>Male</span>
+              </label>
+              <label class="vip-radio">
+                <input type="radio" name="sex">
+                <span>Female</span>
+              </label>
             </div>
+          </div>
         </div>
-    </div>
-    <div class="vip-row">
-        <div class="vip-col-12">
-            <label for="desc" class="label">Description</label>
+        <div class="vip-row">
+          <div class="vip-col-12">
+            <label class="vip-checkbox">
+              <label class="label short"></label>
+              <div class="vip-form-control">
+                <input type="checkbox" name="technology">
+                <span>Receive message</span>
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="vip-row">
+          <div class="vip-col-12">
+            <label class="vip-checkbox">
+              <label class="label short"></label>
+              <div class="vip-form-control">
+                <input type="checkbox" name="technology">
+                <span>Edit</span>
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="vip-row">
+          <div class="vip-col-12">
+            <label class="vip-checkbox">
+              <label class="label short"></label>
+              <div class="vip-form-control">
+                <input type="checkbox" name="technology">
+                <span>Write</span>
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="vip-row">
+          <div class="vip-col-12">
+            <label for="desc2" class="label short">Description</label>
             <p class="vip-form-control">
-                <textarea name="desc" id="desc"></textarea>
+              <textarea name="desc" id="desc2"></textarea>
             </p>
+          </div>
         </div>
+      </form>
     </div>
-    <div class="vip-row">
-        <div class="vip-col-4">
-            <label class="label">Sex</label>
-            <div class="vip-form-control">
-                <label class="vip-radio">
-                    <input type="radio" name="sex">
-                    <span>Male</span>
-                </label>
-                <label class="vip-radio">
-                    <input type="radio" name="sex">
-                    <span>Female</span>
-                </label>
-            </div>
-        </div>
-        <div class="vip-col-6 vip-offset-2">
-            <label class="label">Technology</label>
-            <p class="vip-form-control">
-                <label class="vip-checkbox">
-                    <input type="checkbox" name="technology">
-                    <span>php</span>
-                </label>
-                <label class="vip-checkbox">
-                    <input type="checkbox" name="technology">
-                    <span>javascript</span>
-                </label>
-                <label class="vip-checkbox disabled">
-                    <input type="checkbox" name="technology" disabled>
-                    <span>ruby</span>
-                </label>
-                <label class="vip-checkbox disabled">
-                    <input type="checkbox" name="technology" checked disabled>
-                    <span>java</span>
-                </label>
-            </p>
-        </div>
-    </div>
-    <div class="vip-row">
-        <div class="vip-col-4">
-            <label for="city" class="label">City</label>
-            <div class="vip-form-control">
-                <div class="vip-select">
-                    <select name="city" id="city">
-                        <option value="1">Shanghai</option>
-                        <option value="2">Beijing</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-    </div>
-</form>
+  </div>
+</section>
+
 </body>
 </html>

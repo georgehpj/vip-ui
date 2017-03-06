@@ -1,7 +1,7 @@
 $control-radius: $radius !default;
 $control-radius-small: $radius-small !default;
-$input_height: 1.4rem !default;
-$input_height-small: 1.2rem !default;
+$input-height: 1.4rem !default;
+$input-height-small: 1.2rem !default;
 
 //按钮、表单元素（input, textarea, select）通用样式
 @mixin control {
@@ -12,8 +12,8 @@ $input_height-small: 1.2rem !default;
   box-shadow: none;
   display: inline-block;
   font-size: $font-size-base;
-  height: $input_height;
-  line-height: calc(#{$input_height} - 2px);
+  height: $input-height;
+  line-height: calc(#{$input-height} - 2px);
   padding-left: 0.75em;
   padding-right: 0.75em;
   position: relative;
@@ -35,8 +35,8 @@ $input_height-small: 1.2rem !default;
 
 // The controls sizes use mixins so they can be used at different breakpoints
 @mixin control-small {
-  height: $input_height-small;
-  line-height: calc(#{$input_height-small} - 2px);
+  height: $input-height-small;
+  line-height: calc(#{$input-height-small} - 2px);
   border-radius: $control-radius-small;
   font-size: $font-size-small;
 }

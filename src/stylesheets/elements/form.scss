@@ -1,10 +1,12 @@
 @charset "utf-8";
 
-$label_width: 9rem !default;
-$label_right_padding: 0.6rem !default;
-$large_input_min_width: 30em !default;
-$middle_input_min_width: 10em !default;
-$short_input_min_width: 5em !default;
+$label-width: 9rem !default;
+$label-width-short: 5rem !default;
+$label-width-small: 7rem !default;
+$label-right-padding: 0.6rem !default;
+$large-input-min-width: 30em !default;
+$middle-input-min-width: 10em !default;
+$short-input-min-width: 5em !default;
 
 $input: $grey-darker !default;
 $input-background: $white !default;
@@ -33,7 +35,7 @@ $radio-transition: 0.2s;
 
 @mixin form-control {
   .vip-form-control {
-    line-height: $input_height;
+    line-height: $input-height;
     box-sizing: border-box;
     color: #363636;
     text-align: left;
@@ -50,19 +52,29 @@ $radio-transition: 0.2s;
 @mixin label {
   .label {
     font-weight: normal;
-    line-height: $input_height;
-    height: $input_height;
+    line-height: $input-height;
+    height: $input-height;
     float: left;
-    width: $label_width;
+    width: $label-width;
     box-sizing: border-box;
     text-align: right;
-    padding-right: $label_right_padding;
+    padding-right: $label-right-padding;
     margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     & + .vip-form-control {
-      margin-left: $label_width;
+      margin-left: $label-width;
     }
     &.small {
       @include control-small;
+      width: $label-width-small;
+    }
+    &.short {
+      width: $label-width-short;
+      + .vip-form-control {
+        margin-left: $label-width-short;
+      }
     }
   }
 }
@@ -269,7 +281,6 @@ $radio-transition: 0.2s;
 
     select {
       @include inputs;
-
       cursor: pointer;
       display: block;
       font-size: 1em;
@@ -297,4 +308,8 @@ $radio-transition: 0.2s;
   @include radio;
   @include checkbox;
   @include select;
+
+  &.full-size{
+    margin-right: 0;
+  }
 }

@@ -398,14 +398,22 @@ table {
     box-sizing: border-box;
     text-align: right;
     padding-right: 0.6rem;
-    margin: 0; }
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
     .vip-form .label + .vip-form-control {
       margin-left: 9rem; }
     .vip-form .label.small {
       height: 1.2rem;
       line-height: calc(1.2rem - 2px);
       border-radius: 2px;
-      font-size: 12px; }
+      font-size: 12px;
+      width: 7rem; }
+    .vip-form .label.short {
+      width: 5rem; }
+      .vip-form .label.short + .vip-form-control {
+        margin-left: 5rem; }
   .vip-form .input,
   .vip-form textarea {
     -moz-appearance: none;
@@ -680,6 +688,8 @@ table {
       line-height: calc(1.2rem - 2px);
       border-radius: 2px;
       font-size: 12px; }
+  .vip-form.full-size {
+    margin-right: 0; }
 
 .vip-col-1, .vip-col-2, .vip-col-3, .vip-col-4, .vip-col-5, .vip-col-6, .vip-col-7, .vip-col-8, .vip-col-9, .vip-col-10, .vip-col-11, .vip-col-12 {
   float: left;
