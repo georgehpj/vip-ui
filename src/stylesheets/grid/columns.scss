@@ -62,8 +62,5 @@ $grid-columns: 12 !default;
 .vip-row {
   display: block;
   @include clearfix;
-  margin-bottom: 0.6rem;
-  &:last-child{
-    margin-bottom: 0;
-  }
+  @include block;
 }

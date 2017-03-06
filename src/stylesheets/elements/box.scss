@@ -1,0 +1,21 @@
+.vip-box {
+  @include block;
+
+  display: block;
+  background-color: $white;
+  border-radius: $radius;
+  padding: 1.25rem;
+  margin-top: 1.25rem;
+  position: relative;
+  border: 1px solid $grey-lighter;
+
+  .box-header {
+    position: absolute;
+    font-size: $font-size-large;
+    line-height: 1;
+    padding: 0 0.4em;
+    top: -($font-size-large/2);
+    left: 1.5em;
+    background-color: $white;
+  }
+}

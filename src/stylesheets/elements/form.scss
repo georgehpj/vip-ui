@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 $label-width: 9rem !default;
-$label-width-short: 5rem !default;
+$label-width-short: 4rem !default;
 $label-width-small: 7rem !default;
 $label-right-padding: 0.6rem !default;
 $large-input-min-width: 30em !default;
@@ -29,8 +29,8 @@ $input-icon-active: $grey !default;
 
 $input-radius: $radius !default;
 
-$radio-outer: 1.5em;
-$radio-inner: 0.5em;
+$radio-outer: 0.9rem;
+$radio-inner: 0.3rem;
 $radio-transition: 0.2s;
 
 @mixin form-control {
@@ -51,6 +51,8 @@ $radio-transition: 0.2s;
 
 @mixin label {
   .label {
+    @include ellipsis;
+
     font-weight: normal;
     line-height: $input-height;
     height: $input-height;
@@ -60,9 +62,6 @@ $radio-transition: 0.2s;
     text-align: right;
     padding-right: $label-right-padding;
     margin: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     & + .vip-form-control {
       margin-left: $label-width;
     }
@@ -133,6 +132,9 @@ $radio-transition: 0.2s;
     min-width: 100%;
     padding: 0.25em 0.75em;
     resize: vertical;
+    &.large{
+      min-height: 25em;
+    }
   }
 }
 
@@ -153,6 +155,8 @@ $radio-transition: 0.2s;
   font-size: 0;
 
   span {
+    @include ellipsis;
+
     display: inline-block;
     vertical-align: middle;
     font-size: $font-size-base;
@@ -174,7 +178,6 @@ $radio-transition: 0.2s;
       position: relative;
       cursor: pointer;
       display: block;
-      transition: border-color $radio-transition linear;
     }
     &:checked {
       &:before {
@@ -188,6 +191,9 @@ $radio-transition: 0.2s;
         display: block;
         cursor: pointer;
       }
+    }
+    &:not(:checked):hover:before {
+      border-color: $input-hover-border;
     }
   }
   & + .vip-#{$type} {
@@ -252,12 +258,12 @@ $radio-transition: 0.2s;
           border: 2px solid #fff;
           border-left: 0;
           border-top: 0;
-          height: 0.8em;
-          width: 0.4em;
+          height: 0.55rem;
+          width: 0.3rem;
           position: absolute;
           transform: rotate(45deg);
-          left: 0.5em;
-          top: 0.25em;
+          left: 0.3rem;
+          top: 0.15rem;
         }
       }
     }
