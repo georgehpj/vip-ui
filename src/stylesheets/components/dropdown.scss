@@ -1,0 +1,210 @@
+$caret-width-base: 4px !default;
+$cursor-disabled: not-allowed !default;
+
+$dropdown-bg: $white !default;
+$dropdown-border: $border-color !default;
+$dropdown-fallback-border: #ccc !default;
+$dropdown-divider-bg: #e5e5e5 !default;
+
+$dropdown-link-color: $grey-dark !default;
+$dropdown-link-hover-color: darken($grey-dark, 5%) !default;
+$dropdown-link-hover-bg: #f5f5f5 !default;
+
+//** Active dropdown menu item text color.
+$dropdown-link-active-color: $white !default;
+//** Active dropdown menu item background color.
+$dropdown-link-active-bg: $blue !default;
+
+$dropdown-link-disabled-color: $grey-light !default;
+$dropdown-header-color: $grey-light !default;
+
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+@mixin nav-divider($color: #e5e5e5) {
+  height: 1px;
+  margin: ((1em / 2) - 1) 0;
+  overflow: hidden;
+  background-color: $color;
+}
+
+@mixin reset-filter() {
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+
+@mixin nav-divider($color: #e5e5e5) {
+  height: 1px;
+  margin: (($line-height-base * $font-size-base / 2) - 1) 0;
+  overflow: hidden;
+  background-color: $color;
+}
+
+//
+// Dropdown menus
+// --------------------------------------------------
+
+// Dropdown arrow/caret
+.vip-caret {
+  &:after {
+    @include arrow(#fff);
+    margin-top: -0.25em;
+    right: calc((1.5em - 0.25em)/2);
+    top: 50%;
+    z-index: 1;
+  }
+}
+
+// The dropdown wrapper (div)
+.vip-dropup,
+.vip-dropdown {
+  position: relative;
+}
+
+.vip-dropdown-toggle:focus {
+  outline: 0;
+}
+
+// The dropdown menu (ul)
+.vip-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: $zindex-dropdown;
+  display: none;
+  float: left;
+  min-width: 8rem;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  list-style: none;
+  font-size: $font-size-base;
+  text-align: left;
+  background-color: $dropdown-bg;
+  border: 1px solid $dropdown-fallback-border; // IE8 fallback
+  border: 1px solid $dropdown-border;
+  border-radius: $radius;
+  @include box-shadow(0 6px 12px rgba(0, 0, 0, .175));
+  background-clip: padding-box;
+
+  // Aligns the dropdown menu to right
+  &.pull-right {
+    right: 0;
+    left: auto;
+  }
+
+  .divider {
+    @include nav-divider($dropdown-divider-bg);
+  }
+
+  // Links within the dropdown menu
+  > li > a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: $line-height-base;
+    color: $dropdown-link-color;
+    white-space: nowrap;
+  }
+}
+
+// Hover/Focus state
+.vip-dropdown-menu > li > a {
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: $dropdown-link-hover-color;
+    background-color: $dropdown-link-hover-bg;
+  }
+}
+
+// Active state
+.vip-dropdown-menu > .active > a {
+  &,
+  &:hover,
+  &:focus {
+    color: $dropdown-link-active-color;
+    text-decoration: none;
+    outline: 0;
+    background-color: $dropdown-link-active-bg;
+  }
+}
+
+.vip-dropdown-menu > .disabled > a {
+  &,
+  &:hover,
+  &:focus {
+    color: $dropdown-link-disabled-color;
+  }
+
+  // Nuke hover/focus effects
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    background-color: transparent;
+    background-image: none; // Remove CSS gradient
+    @include reset-filter;
+    cursor: $cursor-disabled;
+  }
+}
+
+.vip-open {
+  > .vip-dropdown-menu {
+    display: block;
+  }
+
+  > a {
+    outline: 0;
+  }
+}
+
+.vip-dropdown-menu-right {
+  left: auto;
+  right: 0;
+}
+
+.vip-dropdown-menu-left {
+  left: 0;
+  right: auto;
+}
+
+.vip-dropdown-header {
+  display: block;
+  padding: 3px 20px;
+  font-size: $font-size-small;
+  line-height: $line-height-base;
+  color: $dropdown-header-color;
+  white-space: nowrap; // as with > li > a
+}
+
+.vip-dropdown-backdrop {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: ($zindex-dropdown - 10);
+}
+
+.vip-pull-right > .vip-dropdown-menu {
+  right: 0;
+  left: auto;
+}
+
+.vip-dropup,
+.navbar-fixed-bottom .vip-dropdown {
+  .vip-caret {
+    &:after{
+      border: 2px solid #fff;
+      margin-top: 0;
+      border-left: 0;
+      border-bottom: 0;
+    }
+  }
+  .vip-dropdown-menu {
+    top: auto;
+    bottom: 100%;
+    margin-bottom: 2px;
+  }
+}

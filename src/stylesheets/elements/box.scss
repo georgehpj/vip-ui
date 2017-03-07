@@ -3,18 +3,23 @@
 
   display: block;
   background-color: $white;
-  border-radius: $radius;
   padding: 1.25rem;
   margin-top: 1.25rem;
   position: relative;
-  border: 1px solid $grey-lighter;
+  &.border{
+    border-radius: $radius;
+    border: 1px solid rgba($grey-lighter, 0.3);
+  }
+  &.border-bottom{
+    border-bottom: 1px solid rgba($grey-lighter, 0.3);
+  }
 
-  .box-header {
+  .vip-box-header {
     position: absolute;
-    font-size: $font-size-large;
+    font-size: $font-size-medium;
     line-height: 1;
     padding: 0 0.4em;
-    top: -($font-size-large/2);
+    top: -($font-size-medium/2);
     left: 1.5em;
     background-color: $white;
   }

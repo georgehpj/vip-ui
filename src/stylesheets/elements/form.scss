@@ -2,6 +2,7 @@
 
 $label-width: 9rem !default;
 $label-width-short: 4rem !default;
+$label-width-medium: 6rem !default;
 $label-width-small: 7rem !default;
 $label-right-padding: 0.6rem !default;
 $large-input-min-width: 30em !default;
@@ -39,12 +40,14 @@ $radio-transition: 0.2s;
     box-sizing: border-box;
     color: #363636;
     text-align: left;
-    .input, .select {
+    .input, textarea {
       width: 100%;
     }
     textarea {
       max-width: 100%;
-      width: 100%;
+    }
+    &.vip-control-inline {
+      display: inline-block;
     }
   }
 }
@@ -64,6 +67,9 @@ $radio-transition: 0.2s;
     margin: 0;
     & + .vip-form-control {
       margin-left: $label-width;
+      &.vip-control-inline {
+        margin-left: 0;
+      }
     }
     &.small {
       @include control-small;
@@ -71,8 +77,14 @@ $radio-transition: 0.2s;
     }
     &.short {
       width: $label-width-short;
-      + .vip-form-control {
+      + .vip-form-control:not(.vip-control-inline) {
         margin-left: $label-width-short;
+      }
+    }
+    &.medium{
+      width: $label-width-medium;
+      + .vip-form-control:not(.vip-control-inline) {
+        margin-left: $label-width-medium;
       }
     }
   }
@@ -114,7 +126,6 @@ $radio-transition: 0.2s;
   .input,
   textarea {
     @include inputs;
-    box-shadow: inset 0 1px 2px rgba($black, 0.1);
     max-width: 100%;
     width: 100%;
 
@@ -132,7 +143,7 @@ $radio-transition: 0.2s;
     min-width: 100%;
     padding: 0.25em 0.75em;
     resize: vertical;
-    &.large{
+    &.large {
       min-height: 25em;
     }
   }
@@ -162,6 +173,7 @@ $radio-transition: 0.2s;
     font-size: $font-size-base;
   }
   input[type="#{$type}"] {
+    -moz-appearance: none;
     -webkit-appearance: none;
     outline: none;
     position: relative;
@@ -272,7 +284,7 @@ $radio-transition: 0.2s;
 
 @mixin select {
   .vip-select {
-    display: block;
+    display: inline-block;
     position: relative;
     vertical-align: top;
 
@@ -301,6 +313,9 @@ $radio-transition: 0.2s;
     &.small {
       @include control-small;
     }
+    &.block {
+      display: block;
+    }
   }
 }
 
@@ -315,7 +330,17 @@ $radio-transition: 0.2s;
   @include checkbox;
   @include select;
 
-  &.full-size{
+  &.full-size {
     margin-right: 0;
+  }
+}
+
+.vip-control-inline {
+  @include clearfix;
+  .control-item{
+    float: left;
+    &:not(:first-child){
+      margin-left: 0.5rem;
+    }
   }
 }

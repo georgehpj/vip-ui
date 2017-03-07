@@ -23,6 +23,7 @@ $btn-min-width: 5rem;
   @include btn-icon;
 
   background-color: $btn-bg-color;
+  border-width: 0;
   color: $btn-color;
   cursor: pointer;
   height: 1.7rem;
@@ -87,5 +88,9 @@ $btn-min-width: 5rem;
     &.active{
       background-color: $btn-bg-color-gray-disabled;
     }
+  }
+
+  & + .vip-btn{
+    margin-left: 1rem;
   }
 }

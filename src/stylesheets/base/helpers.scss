@@ -11,6 +11,10 @@
   float: right;
 }
 
+.vip-absolute-center{
+  @include center;
+}
+
 // Overlay
 .vip-overlay {
   @include overlay;
@@ -51,4 +55,8 @@
   .vip-font-#{$name} {
     color: $color;
   }
+}
+
+.vip-borderless{
+  border-width: 0 !important;
 }

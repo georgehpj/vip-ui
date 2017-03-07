@@ -37,6 +37,8 @@ $font-size-small: 12px !default;
 $font-size-medium: 18px !default;
 $font-size-large: 22px !default;
 
+$line-height-base: 1.428571429 !default; // 20/14
+
 $weight-light: 300 !default;
 $weight-normal: 400 !default;
 $weight-bold: 700 !default;
@@ -96,3 +98,10 @@ $wide-screen: 1280px !default;
 
 $colors: (white: $white, black: $black, light: $grey-lighter, dark: $grey-darker, primary: $white, info: $info, success: $success, warning: $warning, danger: $danger) !default;
 
+//-- Z-index master list
+$zindex-navbar: 1000 !default;
+$zindex-navbar-fixed: 1030 !default;
+$zindex-dropdown: 1000 !default;
+$zindex-tooltip: 1070 !default;
+$zindex-modal-background: 1040 !default;
+$zindex-modal: 1050 !default;
